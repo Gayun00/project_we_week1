@@ -17,15 +17,48 @@ body {
 }
 
 .main {
-  /* width: 1200px; */
+  width: 900px;
   height: 900px;
+  margin:auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(./img/box.png) center/cover;
 
 
+}
 
+.cookie {
+  width: 100px;
+  cursor: pointer;
+}
+
+.cookie:hover {
+  transform: scale(1.1);
+}
+.cookiemonster_eat {
+  width: 300px;
+  position: fixed;
+  top: 80%;
+  left: 80%;
+}
+
+.cookiemonster_eat:hover {
+  transform: scale(1.1);
+}
+
+.hold {
+  border: solid red 4px;
+}
+
+.hovered {
+  background: green;
+  border-style: dashed;
+}
+
+.invisible {
+  display: none;
 }
 
 .section1 {
