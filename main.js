@@ -78,6 +78,5 @@ function dragDrop() {
         $nope.classList.add('hidden');
       },1000);
   }
-
 }
 }
