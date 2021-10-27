@@ -38,17 +38,29 @@ body {
   transform: scale(1.1);
 }
 .cookiemonster_eat {
-  width: 300px;
+  width: 500px;
   position: fixed;
-  top: 80%;
-  left: 80%;
+  top: 70%;
+  left: 70%;
 }
 
 .cookiemonster_eat:hover {
   transform: scale(1.1);
 }
 
+.yum {
+  width:200px;
+  position: fixed;
+  top: 50%;
+  left: 80%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .hold {
+  width: 100px;
   border: solid red 4px;
 }
 

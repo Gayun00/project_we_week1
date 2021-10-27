@@ -1,12 +1,17 @@
 const $button = document.querySelector(".button");
 const $main = document.querySelector(".main");
 const $cookie = document.querySelector(".cookie");
+const $cookieMonster = document.querySelector(".cookiemonster_eat");
+const $yum = document.querySelector(".yum");
 
 $button.addEventListener("click", scrollDown);
 $main.addEventListener("click", openSection);
-$cookie.addEventListener("dragstart", dragStart)
-$cookie.addEventListener("drag", dragCookie)
-$cookie.addEventListener("dragend", dragEnd)
+$cookie.addEventListener("dragstart", dragStart);
+// $cookie.addEventListener("drag", dragCookie);
+$cookie.addEventListener("dragend", dragEnd);
+$cookieMonster.addEventListener("dragenter", dragEnter);
+$cookieMonster.addEventListener("dragover", dragOver);
+$cookieMonster.addEventListener("drop", dragDrop)
 
 function scrollDown() {
   $main.scrollIntoView({behavior: "smooth"});
@@ -24,13 +29,6 @@ function openSection(ev) {
 
 }
 
-function dragCookie(ev) {
-  const x = ev.offsetX;
-  const y = ev.offsetY;
-  console.log(x,y)
-  $cookie.style.left=x;
-  $cookie.style.top=y;
-}
 
 function dragStart() {
   this.className += 'hold';
@@ -38,6 +36,24 @@ function dragStart() {
 }
 
 function dragEnd() {
-  console.log('end')
+  console.log("dragEnd")
+}
+
+function dragEnter(ev) {
+  ev.preventDefault();
+  // this.className += 'hovered';
+  console.log("enter")
+}
+
+function dragOver(ev) {
+  ev.preventDefault();
+  console.log("over")
+}
+
+function dragDrop() {
+  $yum.classList.remove('hidden');
+  setTimeout(()=>{
+    $yum.classList.add('hidden');
+  },1000);
 }
 
