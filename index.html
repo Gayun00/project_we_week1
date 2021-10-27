@@ -33,9 +33,29 @@
       <img
         class="cookie"
         draggable="true"
+        data-cookie="true"
         ondragstart="event.dataTransfer.setData('text/plain',null)"
         src="./img/cookie1.png"
         
+      >
+
+      <img
+        src="./img/candy.png"
+        alt="candy"
+        class="not-cookie"
+        data-cookie="false"
+        draggable="true"
+        ondragstart="event.dataTransfer.setData('text/plain',null)"
+      >
+      <img src="./img/nacho.png" alt="nacho" class="not-cookie"
+        data-cookie="false"
+        draggable="true"
+        ondragstart="event.dataTransfer.setData('text/plain',null)"
+      >
+      <img src="./img/snack.png" alt="snack" class="not-cookie"
+        data-cookie="false"
+        draggable="true"
+        ondragstart="event.dataTransfer.setData('text/plain',null)"
       >
       <img
         class="cookiemonster_eat"
@@ -45,6 +65,7 @@
       >
 
       <img class="yum hidden" src="./img/yum.png" >
+      <img src="./img/nope.png" alt="nope" class="nope hidden">
     </main>
 
     <footer class="footer">

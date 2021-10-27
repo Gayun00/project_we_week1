@@ -29,7 +29,8 @@ body {
 
 }
 
-.cookie {
+.cookie,
+.not-cookie {
   width: 100px;
   cursor: pointer;
 }
@@ -37,6 +38,11 @@ body {
 .cookie:hover {
   transform: scale(1.1);
 }
+
+.not-cookie:hover {
+  transform: scale(1.1);
+}
+
 .cookiemonster_eat {
   width: 500px;
   position: fixed;
@@ -48,7 +54,8 @@ body {
   transform: scale(1.1);
 }
 
-.yum {
+.yum,
+.nope {
   width:200px;
   position: fixed;
   top: 50%;
