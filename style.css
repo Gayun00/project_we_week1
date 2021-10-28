@@ -126,6 +126,14 @@ body {
   left: 80%;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.article-hidden {
+  visibility: hidden;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -188,6 +196,8 @@ body {
 .open {
   flex-grow: 2;
 }
+
+
 
 .footer {
   height: 800px;

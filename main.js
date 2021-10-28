@@ -7,6 +7,7 @@ const $nope = document.querySelector(".nope");
 const $notCookies = document.querySelectorAll(".not-cookie");
 const $box = document.querySelector(".box-background");
 const $info = document.querySelector(".invisible");
+const $articles = document.querySelectorAll(".article");
 
 $button.addEventListener("click", scrollDown);
 $main.addEventListener("click", openSection);
@@ -25,12 +26,23 @@ function scrollDown() {
 
 function openSection(ev) {
   const target = ev.target;
+  const clickedSectionNum = target.dataset.section;
   const $openedSection = document.querySelector(".open");
+  const $clickedArticle = document.querySelector(`article[data-article="${clickedSectionNum}"]`);
+
   if ($openedSection && $openedSection !== target) {
-      $openedSection.classList.remove("open");
+    $openedSection.classList.remove("open");
     target.classList.toggle('open');
+
+    const openedSectionNum = $openedSection.dataset.section;
+    const $openedArticle = document.querySelector(`article[data-article="${openedSectionNum}"]`)
+
+    $openedArticle.classList.add("hidden")
+    $clickedArticle.classList.toggle("hidden")
+
   } else {
     target.classList.toggle('open');
+    $clickedArticle.classList.toggle("hidden")
   }
 }
 
