@@ -10,59 +10,68 @@
 <body>
   <box class="container">
     <header class="header">
-      <p>안녕하세요!</p>
-       <p>프론트엔드 개발자를 꿈꾸는</p>
-       <p>이가윤입니다 :)</p>
-       <img src="./img/cookie_greet.jpg" alt="">
+      <h1 class="text-eng">Hello!</h1>
+      <img class ="cookie_monster_greet" src="./img/cookie_monster_greet.png" alt="">
+      <h2 class="text">프론트엔드 개발자를 꿈꾸는</h2>
+      <h2 class="text">이가윤입니다 :)</h2>
       <button class="button">Click</button>
     </header>
 
     <main class="main">
-      <!-- CLICK
-      <section class="section1">
-        1. 저는~~
-      </section>
+      <h1 class="text-eng">Drag And Drop</h1>
+      <div class="invisible">
+        <img class="cookie_monster_head" src="./img/head.png" alt="">
+        <section class="section1">
+          1. 내용
+          <article class="article1 hidden"></article>
+        </section>
+  
+        <section class="section2">
+          2. 내용
+          <article class="article2  hidden"></article>
+        </section>
+  
+        <section class="section3">
+          3. 내용
+          <article class="article3  hidden"></article>
+        </section>
+      </div>
+      <div class="box-background">
+          <img
+          class="cookie"
+          draggable="true"
+          data-cookie="true"
+          ondragstart="event.dataTransfer.setData('text/plain',null)"
+          src="./img/cookie1.png"
+          
+        >
 
-      <section class="section2">
-        2. 개발자가 되기로 결심한 이유
-      </section>
+        <img
+          src="./img/candy.png"
+          alt="candy"
+          class="not-cookie"
+          data-cookie="false"
+          draggable="true"
+          ondragstart="event.dataTransfer.setData('text/plain',null)"
+        >
+        <img src="./img/nacho.png" alt="nacho" class="not-cookie"
+          data-cookie="false"
+          draggable="true"
+          ondragstart="event.dataTransfer.setData('text/plain',null)"
+        >
+        <img src="./img/snack.png" alt="snack" class="not-cookie"
+          data-cookie="false"
+          draggable="true"
+          ondragstart="event.dataTransfer.setData('text/plain',null)"
+        >
 
-      <section class="section3">
-        3. ㅎㅎ
-      </section> -->
+      </div>
       <img
-        class="cookie"
-        draggable="true"
-        data-cookie="true"
-        ondragstart="event.dataTransfer.setData('text/plain',null)"
-        src="./img/cookie1.png"
-        
-      >
+      class="cookiemonster_eat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Q"
+      src="./img/cookie_monster_eat.png"
+      ondrop="dragDrop()"
 
-      <img
-        src="./img/candy.png"
-        alt="candy"
-        class="not-cookie"
-        data-cookie="false"
-        draggable="true"
-        ondragstart="event.dataTransfer.setData('text/plain',null)"
-      >
-      <img src="./img/nacho.png" alt="nacho" class="not-cookie"
-        data-cookie="false"
-        draggable="true"
-        ondragstart="event.dataTransfer.setData('text/plain',null)"
-      >
-      <img src="./img/snack.png" alt="snack" class="not-cookie"
-        data-cookie="false"
-        draggable="true"
-        ondragstart="event.dataTransfer.setData('text/plain',null)"
-      >
-      <img
-        class="cookiemonster_eat"
-        src="./img/cookiemonster_eat.jpg"
-        ondrop="dragDrop()"
-
-      >
+    >
 
       <img class="yum hidden" src="./img/yum.png" >
       <img src="./img/nope.png" alt="nope" class="nope hidden">
@@ -73,7 +82,7 @@
     </footer>
 
     <button class="top">top</button>
-    <button class="finish">다 읽었어요</button>
+    <!-- <button class="finish">다 읽었어요</button> -->
   </box>
   <script src="main.js"></script>
 </body>
