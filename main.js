@@ -1,3 +1,4 @@
+const $cookieMonsterGreet = document.querySelector(".cookie_monster_greet");
 const $button = document.querySelector(".button");
 const $main = document.querySelector(".main");
 const $cookie = document.querySelector(".cookie");
@@ -9,7 +10,7 @@ const $box = document.querySelector(".box-background");
 const $info = document.querySelector(".invisible");
 const $articles = document.querySelectorAll(".article");
 
-$button.addEventListener("click", scrollDown);
+$cookieMonsterGreet.addEventListener("click", scrollDown);
 $main.addEventListener("click", openSection);
 $cookie.addEventListener("dragstart", dragStart);
 $cookie.addEventListener("dragend", dragEnd);
@@ -73,10 +74,13 @@ function dragDrop() {
       yumOrNope($yum)
       $box.style.display="none";
       $info.classList.add("my-info");
-      console.log($cookieMonster)
       $cookieMonster.src = "./img/cookie_ate_cookie.png"
     } else {
       yumOrNope($nope)
+      $cookieMonster.src = "./img/nope_head.png"
+      setTimeout(()=>{
+        $cookieMonster.src = "./img/cookie_monster_eat.png"
+      }, 1000)
     }
   },100)
 }
