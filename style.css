@@ -22,6 +22,8 @@ body {
   text-align: center;
   margin: 0 ;
   background-color: var(--color-cookie);
+  font-family: BinggraeSamanco-Bold;
+  font-size: 25px;
 }
 
 .text-eng {
@@ -60,7 +62,7 @@ body {
 }
 
 .button {
-  width: 100px;
+  width: 130px;
   margin: 0 0 50px 0 ;
   background-color: transparent;
   font-family: Knewave;
@@ -97,6 +99,10 @@ body {
   justify-content: center;
   align-items: center;
   background: url(./img/box.png) center/cover;
+}
+
+.detail {
+  font-size: 17px;
 }
 
 .cookie_monster_head {
@@ -141,9 +147,7 @@ body {
   visibility: visible;
 }
 
-.article-hidden {
-  visibility: hidden;
-}
+
 
 .hidden {
   visibility: hidden;
@@ -165,7 +169,6 @@ body {
 
 
 .my-info {
-  /* display: none; */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -175,33 +178,52 @@ body {
 }
 
 .section1 {
+  padding:8px 0 3px 0;
   width: 1000px;
   height: 30px;
   border-radius: 20px 20px 0 0;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
   background-color:var(--color-chip);
   cursor: pointer;
   transition: all 0.5s ease-in;
 }
 
 .section2 {
+  padding:3px 0 3px 0;
   width: 1000px;
   height: 30px;
-
+  border-right: 2px solid black;
+  border-left: 2px solid black;
   background-color: #936c48;
   cursor: pointer;
   transition: all 0.5s ease-in;
 }
 
 .section3 {
+  padding:3px 0 8px 0;
   width: 1000px;
   height: 30px;
   border-radius: 0 0 20px 20px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
   background-color: var(--color-chip);
   cursor: pointer;
   transition: all 0.5s ease-in;
   box-shadow: 0px 9px 11px -10px #000000;
 }
 
+.article {
+  margin-top: 15px;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.article-hidden {
+  visibility: hidden;
+}
 
 .open {
   flex-grow: 2;
@@ -210,8 +232,11 @@ body {
 
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 800px;
-  background-color: aliceblue;
+  background-color: var(--color-cookie);
 }
 
 .top {

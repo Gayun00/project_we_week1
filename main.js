@@ -2,6 +2,7 @@ const $cookieMonsterGreet = document.querySelector(".cookie_monster_greet");
 const $button = document.querySelector(".button");
 const $main = document.querySelector(".main");
 const $cookie = document.querySelector(".cookie");
+const $guide = document.querySelector(".guide");
 const $cookieMonster = document.querySelector(".cookiemonster_eat");
 const $yum = document.querySelector(".yum");
 const $nope = document.querySelector(".nope");
@@ -27,6 +28,7 @@ function scrollDown() {
 
 function openSection(ev) {
   const target = ev.target;
+  if(target.className === "article") return;
   const clickedSectionNum = target.dataset.section;
   const $openedSection = document.querySelector(".open");
   const $clickedArticle = document.querySelector(`article[data-article="${clickedSectionNum}"]`);
@@ -71,19 +73,20 @@ function dragOver(ev) {
 function dragDrop() {
   setTimeout(()=>{
     if (isCookie === true) {
-      yumOrNope($yum)
+      yumOrNope($yum);
       $box.style.display="none";
+      $guide.innerText = "저에 대해 소개할게요!"
       $info.classList.add("my-info");
-      $cookieMonster.src = "./img/cookie_ate_cookie.png"
+      $cookieMonster.src = "./img/cookie_ate_cookie.png";
     } else {
-      yumOrNope($nope)
-      $cookieMonster.src = "./img/nope_head.png"
+      yumOrNope($nope);
+      $cookieMonster.src = "./img/nope_head.png";
       setTimeout(()=>{
-        $cookieMonster.src = "./img/cookie_monster_eat.png"
-      }, 1000)
+        $cookieMonster.src = "./img/cookie_monster_eat.png";
+      }, 1000);
     }
-  },100)
-}
+  },100);
+};
 
 function yumOrNope(text) {
   text.classList.remove('hidden');
