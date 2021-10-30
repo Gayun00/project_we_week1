@@ -6,10 +6,14 @@ const $guide = document.querySelector(".guide");
 const $cookieMonster = document.querySelector(".cookiemonster_eat");
 const $yum = document.querySelector(".yum");
 const $nope = document.querySelector(".nope");
+const $thx = document.querySelector(".thanks");
 const $notCookies = document.querySelectorAll(".not-cookie");
 const $box = document.querySelector(".box-background");
 const $info = document.querySelector(".invisible");
 const $articles = document.querySelectorAll(".article");
+const $readButton = document.querySelector(".read");
+const $footer = document.querySelector(".footer");
+
 
 $cookieMonsterGreet.addEventListener("click", scrollDown);
 $main.addEventListener("click", openSection);
@@ -20,10 +24,11 @@ $cookieMonster.addEventListener("dragover", dragOver);
 $cookieMonster.addEventListener("drop", dragDrop)
 $notCookies.forEach((notCookie) => {notCookie.addEventListener("dragstart", dragStart)});
 $notCookies.forEach((notCookie) => {notCookie.addEventListener("dragend", dragEnd)});
+$readButton.addEventListener("click", scrollToBottom);
 
 function scrollDown() {
   $main.scrollIntoView({behavior: "smooth"});
-  $cookieMonster.style.transform="translateY(-99%)"
+  $cookieMonster.style.transform="translateY(-99%)";
 }
 
 function openSection(ev) {
@@ -38,14 +43,20 @@ function openSection(ev) {
     target.classList.toggle('open');
 
     const openedSectionNum = $openedSection.dataset.section;
-    const $openedArticle = document.querySelector(`article[data-article="${openedSectionNum}"]`)
+    const $openedArticle = document.querySelector(`article[data-article="${openedSectionNum}"]`);
 
-    $openedArticle.classList.add("hidden")
-    $clickedArticle.classList.toggle("hidden")
+
+    setTimeout(()=>{
+      $openedArticle.classList.add("hidden");
+    }, 100)
+    setTimeout(()=>{
+      $clickedArticle.classList.toggle("hidden");
+    }, 500)
+
 
   } else {
     target.classList.toggle('open');
-    $clickedArticle.classList.toggle("hidden")
+      $clickedArticle.classList.toggle("hidden");
   }
 }
 
@@ -77,6 +88,7 @@ function dragDrop() {
       $box.style.display="none";
       $guide.innerText = "저에 대해 소개할게요!"
       $info.classList.add("my-info");
+      $readButton.classList.remove('hidden');
       $cookieMonster.src = "./img/cookie_ate_cookie.png";
     } else {
       yumOrNope($nope);
@@ -93,4 +105,10 @@ function yumOrNope(text) {
   setTimeout(()=>{
     text.classList.add('hidden');
   },1000);
+}
+
+function scrollToBottom() {
+  $footer.scrollIntoView({behavior: "smooth"});
+  $thx.classList.remove('hidden');
+  $cookieMonster.src = "./img/cookie_monster_greet.png";
 }
