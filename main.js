@@ -14,7 +14,6 @@ const $articles = document.querySelectorAll(".article");
 const $readButton = document.querySelector(".read");
 const $footer = document.querySelector(".footer");
 
-
 $cookieMonsterGreet.addEventListener("click", scrollDown);
 $main.addEventListener("click", openSection);
 $cookie.addEventListener("dragstart", dragStart);
@@ -49,14 +48,21 @@ function openSection(ev) {
     setTimeout(()=>{
       $openedArticle.classList.add("hidden");
     }, 100)
-    setTimeout(()=>{
-      $clickedArticle.classList.toggle("hidden");
-    }, 500)
 
+
+      setTimeout(()=>{
+        $clickedArticle.classList.toggle("hidden");
+      }, 500)
 
   } else {
     target.classList.toggle('open');
-      $clickedArticle.classList.toggle("hidden");
+    if ($clickedArticle.classList.contains('hidden')) {
+      setTimeout(()=>{
+        $clickedArticle.classList.remove("hidden");
+      }, 500)
+    } else {
+      $clickedArticle.classList.add("hidden");
+    }
   }
 }
 
